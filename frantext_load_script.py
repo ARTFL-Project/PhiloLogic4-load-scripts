@@ -153,10 +153,7 @@ l = Loader(data_destination,
 
 l.add_files(files)
 filenames = l.list_files()
-if sort_order == None:
-    load_metadata = [{"filename":f} for f in sorted(filenames)]
-else:
-    load_metadata = l.sort_by_metadata(*sort_order)
+load_metadata = l.sort_by_metadata(*sort_order)
 
 ## Clean-up dates and move texts with no date at the end
 load_metadata = clean_dates_and_sort(load_metadata, sort_order)
